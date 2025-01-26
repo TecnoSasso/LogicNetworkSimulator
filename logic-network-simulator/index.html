@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <select id="menu">
+        <option value="Sel">Selection</option>
+        <option value="And">And Gate</option>
+        <option value="Or">Or Gate</option>
+        <option value="Xor">Xor Gate</option>
+        <option value="Nor">Nor Gate</option>
+        <option value="Led">Led</option>
+        <option value="Btn" selected >Button</option>
+    </select>
+    <select id="speed" onclick="setSpeed()">
+        <option value=0>0 TPS</option>
+        <option value=1>1 TPS</option>
+        <option value=2>2 TPS</option>
+        <option value=4>4 TPS</option>
+        <option value=8>8 TPS</option>
+        <option value=16 selected>16 TPS</option>
+        <option value=32>32 TPS</option>
+        <option value=64>64 TPS</option>
+        <option value=128>128 TPS</option>
+        <option value=256>256 TPS</option>
+    </select>
+    <div id="container">
+        <svg width="500" height="500" id="svg">
+        </svg>
+    </div>
+    <div id="shadowTable">
+        <svg id="STsvg">
+        </svg>
+    </div>
+    <div id="copyMenu" style="display: none;">
+        <button onclick="moveShadowTable(event)">Copy</button>
+        <button onclick="deleteSelection()">Delete</button>
+        <button onclick="cancelSelection()">Cancel</button>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
