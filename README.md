@@ -16,7 +16,8 @@ This project is an interactive **Logic Network Simulator** that allows users to 
 - **Responsive UI**: Easy interaction with gates and connections.
 
 
-![Decoder](img/decoder.png "optional title")
+<img alt="Decoder" src="https://raw.githubusercontent.com/TecnoSasso/LogicNetworkSimulator/main/img/decoder.png">
+
 
 ## Requirements
 
@@ -66,4 +67,5 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](license) file for details.
 
-![Seven Segment Display](img/seven_segment_display.png "optional title")
+<img alt="Seven Segment Display" src="https://raw.githubusercontent.com/TecnoSasso/LogicNetworkSimulator/main/img/seven_segment_display.png">
+
