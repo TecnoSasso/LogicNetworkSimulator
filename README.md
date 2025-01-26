@@ -1,8 +1,10 @@
+## LOGIC NETWORK SIMULATOR
+
 ![Full Adder](img/logo.png "optional title")
 
 ## Overview
 
-This project is an interactive **Logic Gate Simulator** that allows users to design and simulate digital circuits. Users can add various logic gates (AND, OR, XOR, NOR) and components like LEDs and buttons on a grid-based interface. Connections between gates can be created to visualize and simulate the flow of logic in real time. The project runs entirely in the browser, making it lightweight and accessible.
+This project is an interactive **Logic Network Simulator** that allows users to design and simulate digital circuits. Users can add various logic gates (AND, OR, XOR, NOR) and components like LEDs and buttons on a grid-based interface. Connections between gates can be created to visualize and simulate the flow of logic in real time. The project runs entirely in the browser, making it lightweight and accessible.
 
 ## Features
 
