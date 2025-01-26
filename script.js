@@ -83,22 +83,22 @@ function toNat(a){
 
 function AndGate(){
     this.state = (toNat(this.inputs[0]) && toNat(this.inputs[1]))
-    this.element.style.backgroundColor = this.state ? "red" : "#333333"
+    this.element.style.backgroundColor = this.state ? "red" : ""
 }
 
 function OrGate(){
     this.state = (toNat(this.inputs[0]) || toNat(this.inputs[1]))
-    this.element.style.backgroundColor = this.state ? "green" : "#333333"
+    this.element.style.backgroundColor = this.state ? "green" : ""
 }
 
 function XorGate(){
     this.state = (toNat(this.inputs[0]) ^ toNat(this.inputs[1]))
-    this.element.style.backgroundColor = this.state ? "blue" : "#333333"
+    this.element.style.backgroundColor = this.state ? "blue" : ""
 }
 
 function NorGate(){
     this.state = !(toNat(this.inputs[0]) || toNat(this.inputs[1]))
-    this.element.style.backgroundColor = this.state ? "magenta" : "#333333"
+    this.element.style.backgroundColor = this.state ? "magenta" : ""
 }
 
 function Led(){
@@ -109,7 +109,7 @@ function Led(){
             break
         }
     }
-    this.element.style.backgroundColor = this.state ? "yellow" : "#333333"
+    this.element.style.backgroundColor = this.state ? "yellow" : ""
 }
 
 // Creating the simulation grid  -----------------------------------------

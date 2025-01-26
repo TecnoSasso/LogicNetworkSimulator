@@ -81,7 +81,43 @@ rect{
     z-index: 4;
 }
 
-#copyMenu{
+#copyMenu {
     position: absolute;
     z-index: 4;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: white 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+    width: 70px;
+    font-family: 'Arial', sans-serif;
+}
+
+#copyMenu button {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    transition: ease-in-out 0.1s;
+}
+
+#copyMenu button:hover {
+    transform: scale(1.05);
+}
+
+#deleteBtn{
+    background-color: red;
+}
+
+#copyBtn{
+    background-color: #0056b3;
+}
+
+#cancelBtn{
+    background-color: #818181;
 }
