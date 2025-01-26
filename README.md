@@ -58,4 +58,4 @@ Refresh the page to clear the grid and start fresh.
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure your code follows the existing style and is well-documented.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](license) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
