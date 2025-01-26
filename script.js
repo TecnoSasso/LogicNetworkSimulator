@@ -510,6 +510,7 @@ function copyGate(cell, targetCell){
     if (!cell.dataset.isGate) return
     const gate = gates[cell.dataset.gateId]
     const CopiedGate = new LogicGate(gate.evalState, targetCell, gate.maxConnection, gate.type)
+    CopiedGate.state = gate.state
     CopiedGate.outConnections = gate.outConnections.slice()
     CopiedGate.inConnections = gate.inConnections.slice()
     CopiedGate.element = targetCell

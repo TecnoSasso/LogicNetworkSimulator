@@ -25,8 +25,8 @@ To run the Logic Network Simulator, you only need a modern web browser. No addit
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/logic-gate-simulator.git
-   cd logic-gate-simulator
+   git clone https://github.com/TecnoSasso/LogicNetworkSimulator.git
+   cd LogicNetworkSimulator
    ```
 2. Open index.html in your web browser.
 
