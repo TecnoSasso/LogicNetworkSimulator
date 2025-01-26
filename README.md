@@ -1,4 +1,4 @@
-# Logic Gate Simulator
+![Full Adder](img/logo.png "optional title")
 
 ## Overview
 
@@ -11,6 +11,9 @@ This project is an interactive **Logic Gate Simulator** that allows users to des
 - **Adjustable Speed**: Control the simulation speed from 0 to 256 TPS (Ticks Per Second).
 - **Copy and Paste**: Duplicate circuit components for quicker designs.
 - **Responsive UI**: Easy interaction with gates and connections.
+
+
+![Decoder](img/decoder.png "optional title")
 
 ## Requirements
 
@@ -58,4 +61,6 @@ Refresh the page to clear the grid and start fresh.
 Contributions are welcome! Please fork the repository and submit a pull request with your changes. Ensure your code follows the existing style and is well-documented.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](license) file for details.
+
+![Seven Segment Display](img/seven_segment_display.png "optional title")
