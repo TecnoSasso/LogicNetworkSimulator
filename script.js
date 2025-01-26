@@ -2,8 +2,8 @@
 // evaluate connections
 // evaluate logic gates state
 
-const tableHeight = 10
-const tableWidth = 20
+let tableHeight = 12
+let tableWidth = 25
 const cellEdge = 50
 
 const container = document.getElementById("container")
@@ -599,4 +599,50 @@ function deleteSelection(){
         deleteGate(selectedCells[i])
     }
     cancelSelection()
+}
+
+// Infinite Grid
+
+/*
+document.addEventListener('keydown', (event) => {
+    const key = event.key.toLowerCase()
+    if (['w', 's', 'a', 'd'].includes(key)) {
+        switch (key) {
+            case 'w':
+                var newRow = generateRow()
+                container.insertBefore(newRow, container.firstChild)
+                tableHeight++
+                break
+            case 's':
+                var newRow = generateRow()
+                container.appendChild(newRow)
+                tableHeight++
+                break
+            case 'a':
+                for (let i = 0; i < tableHeight; i++) {
+                    const currentRow = container.children[i]
+                    const cell = createCell()
+                    currentRow.insertBefore(cell, currentRow.firstChild)
+                }
+                tableWidth++
+                break
+        }
+    }
+})
+*/
+
+function generateRow(){
+    let row = document.createElement("tr")
+    for (let i = 0; i < tableWidth; i++) {
+        const cell = createCell()
+        row.appendChild(cell)
+    }
+    return row
+}
+
+function createCell(){
+    const cell = document.createElement("td")
+    cell.style.width = cellEdge + "px"
+    cell.style.height = cellEdge + "px"
+    return cell
 }
