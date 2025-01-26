@@ -45,7 +45,6 @@ class LogicGate{
         this.type = type  // Gate or Button
         this.outConnections = []  // reference to all the connection going outwards
         this.inConnections = []  // reference to all the connection going inwords
-        this.clone = undefined // reference to its clone
     }
 }
 
@@ -458,7 +457,7 @@ function createShadowTable(selRect){
         const selectionRow = document.createElement("tr")
         for (let x = croppedTopX; x <= croppedBottomX; x++) {
             const clonedCell = select(x, y).cloneNode(true)
-            copyCell(select(x, y), clonedCell)  // Just to create the new logic gate
+            copyGate(select(x, y), clonedCell)  // Just to create the new logic gate
             selectionRow.appendChild(clonedCell)
         }
         shadowTable.appendChild(selectionRow)
@@ -475,32 +474,25 @@ function createShadowTable(selRect){
         }
     }
 
-    // Resizing STsvg
-    waitForLayoutUpdate(() => {
-        STsvg.setAttribute("width", shadowTable.offsetWidth)
-        STsvg.setAttribute("height", shadowTable.offsetHeight)
-    });
-
+    console.log(shadowTableGateList)
     for (let i = 0; i < shadowTableGateList.length; i++) {
         const gate = shadowTableGateList[i]
-        for (let j = 0; j < gate.inConnections.length; j++) {
-            const conn = gate.inConnections[j]
-            if (!shadowTableGateList.includes(conn.start)){ continue }  // Checking if the connection is outside range
-            const newConn = new connection(gate, conn.end.clone, conn.endPin, undefined)
-            
-            newConn.createElement()
+        for (let j = 0; j < gate.outConnections.length; j++) {
+            const conn = gate.outConnections[j]
+            //if (!shadowTableGateList.includes(conn.start)){ continue }  // Checking if the connection is outside range
+            const newConn = new Connection(gate, conn.end.clone, conn.endPin, conn.element)
+            connections.push(newConn)
+            console.log("clone", conn.end.clone)
+            gate.outConnections[j] = newConn
+            newConn.end.inConnections[newConn.end.inConnections.indexOf(conn)] = newConn
+
+            const newConnElement = newConn.createElement()
+            console.log(newConnElement)
+            STsvg.appendChild(newConnElement)
         }
     }
 
     return 1
-}
-
-function waitForLayoutUpdate(callback) {
-    if (shadowTable.offsetWidth > 0) {
-        callback();
-    } else {
-        requestAnimationFrame(() => waitForLayoutUpdate(callback));
-    }
 }
 
 function getCoords(cell, coord){
@@ -514,15 +506,7 @@ function getCoords(cell, coord){
 
 // Handling copying gates (lol) -------------------------------------------
 
-function copyCell(cell, targetCell){
-    /**
-     * cell: DOM of the surce gate
-     * targetCell: DOM of the target cell
-     * 
-     * Copyes cell into targetCell
-     * Also creates the copied LogicGate object
-     */
-    
+function copyGate(cell, targetCell){
     if (!cell.dataset.isGate) return
     const gate = gates[cell.dataset.gateId]
     const CopiedGate = new LogicGate(gate.evalState, targetCell, gate.maxConnection, gate.type)
@@ -580,7 +564,7 @@ function placeSelection(e){
     moveShadowMode = false
     const startCellX = e.clientX
     const startCellY = e.clientY
-    
+
     // Copying LogicGates
     let copyedGates = []
     for (let i = 1; i < shadowTable.children.length; i++) {
@@ -588,9 +572,8 @@ function placeSelection(e){
         for (let j = 0; j < row.length; j++) {
             if (!row[j].dataset.isGate) { continue }
             const shadowCell = row[j].cloneNode(true)
-            console.log(row[j].dataset.gateId)
-            console.log(shadowCell.dataset.gateId)
             const targetCell = document.elementFromPoint(startCellX + j*cellEdge, startCellY + (i-1)*cellEdge)
+            deleteGate(targetCell)
             const gate = gates[shadowCell.dataset.gateId]
             targetCell.dataset.gateId = shadowCell.dataset.gateId
             targetCell.dataset.isGate = shadowCell.dataset.isGate
@@ -601,13 +584,12 @@ function placeSelection(e){
         }
     }
 
-    console.log(copyedGates)
     // Copying Connections
     for (let i = 0; i < copyedGates.length; i++) {
         const connsOut = copyedGates[i].outConnections
         for (let j = 0; j < connsOut.length; j++) {
             conn = connsOut[j]
-            conn.createElement()  // Update the element cause now it's on the svg not the STsvg
+            svg.appendChild(conn.createElement())  // Update the element cause now it's on the svg
         }
     }
 }
