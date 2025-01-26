@@ -19,7 +19,7 @@ This project is an interactive **Logic Network Simulator** that allows users to 
 
 ## Requirements
 
-To run the Logic Gate Simulator, you only need a modern web browser. No additional software or plugins are required.
+To run the Logic Network Simulator, you only need a modern web browser. No additional software or plugins are required.
 
 ## Installation
 
