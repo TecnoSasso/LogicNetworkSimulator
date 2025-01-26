@@ -1,6 +1,7 @@
-## LOGIC NETWORK SIMULATOR
+<img width="100" align="left" style="float: left; margin: 0 15px 0 0;" alt="Full Adder" src="https://raw.githubusercontent.com/TecnoSasso/LogicNetworkSimulator/main/img/logo.png">
 
-![Full Adder](img/logo.png "optional title")
+LOGIC NETWORK SIMULATOR
+=
 
 ## Overview
 
