@@ -2,9 +2,9 @@
 // evaluate connections
 // evaluate logic gates state
 
-let tableHeight = 12
-let tableWidth = 25
 const cellEdge = 50
+let tableHeight = Math.floor(window.innerHeight / cellEdge)
+let tableWidth = Math.floor(window.innerWidth / cellEdge)
 
 const container = document.getElementById("container")
 const shadowTable = document.getElementById("shadowTable")
@@ -115,14 +115,14 @@ function Led(){
 // Creating the simulation grid  -----------------------------------------
 
 for (let y = 0; y < tableHeight; y++) {
-    let row = document.createElement("tr")
+    let row = document.createElement("tr");
     for (let x = 0; x < tableWidth; x++) {
         const cell = document.createElement("td")
         cell.style.width = cellEdge + "px"
         cell.style.height = cellEdge + "px"
-        row.appendChild(cell)
+        row.appendChild(cell);
     }
-    container.appendChild(row)
+    container.appendChild(row);
 }
 
 
