@@ -33,14 +33,17 @@
         <p>Left click to delete a logic gate (you can hold it to delete more)</p>
         <button id="closeHelp" onclick="document.getElementById('help').style.display='none'">Close</button>
     </div>
-    <div id="container">
+    
+    <table id="container">
         <svg width="500" height="500" id="svg">
         </svg>
-    </div>
-    <div id="shadowTable">
+    </table>
+    
+    <table id="shadowTable">
         <svg id="STsvg">
         </svg>
-    </div>
+    </table>
+    
     <div id="copyMenu" style="display: none;">
         <button id="copyBtn" onclick="moveShadowTable(event)">Copy</button>
         <button id="deleteBtn" onclick="deleteSelection()">Delete</button>
