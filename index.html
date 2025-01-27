@@ -25,6 +25,14 @@
         <option value=128>128 TPS</option>
         <option value=256>256 TPS</option>
     </select>
+    <div id="help">
+        <p>Right click for placing down a logic gate.</p>
+        <p>Use the menu in the top right to select the logic gate you wanna place</p>
+        <p>Use the menu in the top left to select the speed of the simulation</p>
+        <p>SHIFT + Drag to make a selection</p>
+        <p>Left click to delete a logic gate (you can hold it to delete more)</p>
+        <button id="closeHelp" onclick="document.getElementById('help').style.display='none'">Close</button>
+    </div>
     <div id="container">
         <svg width="500" height="500" id="svg">
         </svg>
