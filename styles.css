@@ -7,6 +7,43 @@ body {
     height: 100vh;
 }
 
+#help {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra il div */
+    background-color: rgba(51, 51, 51, 0.8); /* Sfondo semi-trasparente */
+    z-index: 5;
+    color: white; /* Colore del testo */
+    padding: 20px; /* Spazio interno */
+    border-radius: 10px; /* Bordi arrotondati */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombra */
+    width: 400px; /* Larghezza fissa */
+    text-align: center; /* Testo centrato */
+    font-family: 'Arial', sans-serif;
+}
+
+#help p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+#closeHelp {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Colore rosso per il pulsante */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Pulsante arrotondato */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#closeHelp:hover {
+    background-color: #c0392b; /* Colore al passaggio del mouse */
+}
+
 #container {
     position: absolute;
     display: inline-block;
