@@ -1,7 +1,7 @@
 // one step consists in:
 // evaluate connections
 // evaluate logic gates state
-
+    
 const cellEdge = 50
 let tableHeight = Math.floor(window.innerHeight / cellEdge)
 let tableWidth = Math.floor(window.innerWidth / cellEdge)
@@ -417,10 +417,10 @@ function createShadowTable(selRect){
     y = selRect.getAttribute("y");
     w = selRect.getAttribute("width");
     h = selRect.getAttribute("height");
-    cellOffX = Math.floor(x / (cellEdge+2))
-    cellOffY = Math.floor(y / (cellEdge+2))
-    CellInW = Math.floor(w / (cellEdge+2))
-    CellInH = Math.floor(h / (cellEdge+2))
+    cellOffX = Math.floor(x / cellEdge)
+    cellOffY = Math.floor(y / cellEdge)
+    CellInW = Math.floor(w / cellEdge)
+    CellInH = Math.floor(h / cellEdge)
 
     removeSelection()
 
@@ -526,7 +526,7 @@ function select(x, y){
 
 function removeSelection(){
     const childCount = shadowTable.children.length
-    for (let i = childCount-1; i >= 1; i--) {
+    for (let i = childCount-1; i > 0; i--) {
         const child = shadowTable.children[i];
         shadowTable.removeChild(child)
     }
@@ -563,8 +563,9 @@ function moveShadowTable(e){
 function placeSelection(e){
     shadowTable.style.display = "none"
     moveShadowMode = false
-    const startCellX = e.clientX
-    const startCellY = e.clientY
+    const startCell = document.elementFromPoint(e.clientX, e.clientY)
+    const startCellX = getCoords(startCell, "x")
+    const startCellY = getCoords(startCell, "y")
 
     // Copying LogicGates
     let copyedGates = []
@@ -573,7 +574,7 @@ function placeSelection(e){
         for (let j = 0; j < row.length; j++) {
             if (!row[j].dataset.isGate) { continue }
             const shadowCell = row[j].cloneNode(true)
-            const targetCell = document.elementFromPoint(startCellX + j*cellEdge, startCellY + (i-1)*cellEdge)
+            const targetCell = select(startCellX + j, startCellY - i+1)
             deleteGate(targetCell)
             const gate = gates[shadowCell.dataset.gateId]
             targetCell.dataset.gateId = shadowCell.dataset.gateId
