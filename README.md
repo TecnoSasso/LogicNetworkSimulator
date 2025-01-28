@@ -5,7 +5,7 @@ LOGIC NETWORK SIMULATOR
 
 ## Overview
 
-This project is an interactive **Logic Network Simulator** that allows users to design and simulate digital circuits. Users can add various logic gates (AND, OR, XOR, NOR) and components like LEDs and buttons on a grid-based interface. Connections between gates can be created to visualize and simulate the flow of logic in real time. The project runs entirely in the browser, making it lightweight and accessible.
+This project is an interactive **Logic Network Simulator** that allows you to design and simulate digital circuits. You can add various logic gates (AND, OR, XOR, NOR) and components like LEDs and buttons on a grid-based interface. Connections between gates can be created to visualize and simulate the flow of logic in real time. Logic Network Simulator runs entirely in the browser, making it lightweight and accessible.
 
 ## Features
 
@@ -21,7 +21,7 @@ This project is an interactive **Logic Network Simulator** that allows users to 
 
 ## Requirements
 
-To run the Logic Network Simulator, you only need a modern web browser. No additional software or plugins are required.
+To run the Logic Network Simulator, you only need a browser. No additional software or plugins are required.
 
 ## Installation
 
@@ -36,7 +36,7 @@ To run the Logic Network Simulator, you only need a modern web browser. No addit
 
 1. **Add Components:**
 
-    - Use the dropdown menu to select a component (e.g., AND Gate, Button, LED).
+    - Use the dropdown menu to select a component (e.g. AND Gate, Button, LED).
     - Click on a cell in the grid to place the selected component.
 
 2. **Create Connections**:
